@@ -1,0 +1,6 @@
+<svg id="Warning_Icon_30x30_Inactive" data-name="Warning Icon 30x30 Inactive" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_26034" data-name="Group 26034">
+    <rect id="Rectangle_2813" data-name="Rectangle 2813" width="30" height="30" fill="none"/>
+    <path id="exclamation-circle-regular" d="M16,8a8,8,0,1,0,8,8A8,8,0,0,0,16,8Zm0,14.452A6.452,6.452,0,1,1,22.452,16,6.448,6.448,0,0,1,16,22.452ZM17.355,19.1A1.355,1.355,0,1,1,16,17.742,1.356,1.356,0,0,1,17.355,19.1ZM14.73,12.277l.219,4.387a.387.387,0,0,0,.387.368h1.328a.387.387,0,0,0,.387-.368l.219-4.387a.387.387,0,0,0-.387-.406H15.117A.387.387,0,0,0,14.73,12.277Z" transform="translate(-1 -1)" fill="#1f1e34"/>
+  </g>
+</svg>

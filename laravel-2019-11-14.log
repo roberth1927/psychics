@@ -1,0 +1,771 @@
+[2019-11-14 15:06:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 33
+    [model_id] => 6
+    [state] => WAITING
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9NWFjZjU2NzBhYjRhYjhkMmVmMDZmNmEzNDVhMjM5NTdmMzA3YWMxMzpzZXNzaW9uX2lkPTFfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTXprMU9UVTFNbjVsUVdvdlVEUXlUR2hXYnpGb1NIWjNOMGMyTW1NNU1XeC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0Mzk1OCZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQzOTU4Ljc3MTQxMjE3NDkzMTExJmNvbm5lY3Rpb25fZGF0YT0lN0IlMjJtb2RlbF9pZCUyMiUzQTYlMkMlMjJ1c2VyX25hbWUlMjIlM0ElMjJhZGFzZGFkYWRhZHMlMjIlMkMlMjJtaW51dGVzX21heCUyMiUzQTE2JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+    [tokbox_session_id] => 1_MX40NjQ0NTI2Mn5-MTU3Mzc0Mzk1OTU1Mn5lQWovUDQyTGhWbzFoSHZ3N0c2MmM5MWx-UH4
+    [minutes_minimum] => 2
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => 
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 15:05:58
+    [updated_at] => 2019-11-14 15:05:58
+    [minutes_max] => 16
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 43
+            [state] => WAITING
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 33
+            [deleted_at] => 
+            [created_at] => 2019-11-14 15:05:52
+            [updated_at] => 2019-11-14 15:05:58
+            [service_id] => 3
+            [max_minutes] => 16
+            [minimum_minutes] => 2
+        )
+
+)
+  
+[2019-11-14 15:06:02] local.WARNING: GuzzleHttp\Exception\ClientException: Client error: `GET https://api.opentok.com/v2/project/46445262/session/1_MX40NjQ0NTI2Mn5-MTU3Mzc0Mzk1OTU1Mn5lQWovUDQyTGhWbzFoSHZ3N0c2MmM5MWx-UH4/stream/` resulted in a `404 Not Found` response:
+{ "message" : "Not found. No clients are actively connected to the OpenTok session." }
+ in /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Middleware.php(66): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response))
+#1 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(203): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(156): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), Array)
+#3 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/TaskQueue.php(47): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(246): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(223): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(267): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(225): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Client.php(106): GuzzleHttp\Promise\Promise->wait()
+#10 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(436): GuzzleHttp\Client->send(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#12 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#13 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#14 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#15 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#18 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#19 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#20 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#21 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#23 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 {main}
+
+Next OpenTok\Exception\DomainException: The OpenTok API request failed: Not found. No clients are actively connected to the OpenTok session. in /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php:563
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(440): OpenTok\Util\Client->handleException(Object(GuzzleHttp\Exception\ClientException))
+#1 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#2 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#3 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#4 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#5 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2019-11-14 15:22:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 34
+    [model_id] => 6
+    [state] => WAITING
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9MzhmYTQwYzdlNzgzZDE1YTExMDlmNWQwYzYyMTZiYWM2MWNhNGMxZDpzZXNzaW9uX2lkPTFfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTkRZM056a3lNMzUzZVdZeGREVTJWVTEwY0RNdlNVSlhhbTF5UlVkU1JqSi1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NDY3NyZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ0Njc3LjEyNjcxOTg1Nzk5OTA0JmNvbm5lY3Rpb25fZGF0YT0lN0IlMjJtb2RlbF9pZCUyMiUzQTYlMkMlMjJ1c2VyX25hbWUlMjIlM0ElMjJhZGFzZGFkYWRhZHMlMjIlMkMlMjJtaW51dGVzX21heCUyMiUzQTE2JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+    [tokbox_session_id] => 1_MX40NjQ0NTI2Mn5-MTU3Mzc0NDY3NzkyM353eWYxdDU2VU10cDMvSUJXam1yRUdSRjJ-UH4
+    [minutes_minimum] => 2
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => 
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 15:17:57
+    [updated_at] => 2019-11-14 15:17:57
+    [minutes_max] => 16
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 44
+            [state] => WAITING
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 34
+            [deleted_at] => 
+            [created_at] => 2019-11-14 15:17:50
+            [updated_at] => 2019-11-14 15:17:57
+            [service_id] => 3
+            [max_minutes] => 16
+            [minimum_minutes] => 2
+        )
+
+)
+  
+[2019-11-14 15:22:02] local.WARNING: GuzzleHttp\Exception\ClientException: Client error: `GET https://api.opentok.com/v2/project/46445262/session/1_MX40NjQ0NTI2Mn5-MTU3Mzc0NDY3NzkyM353eWYxdDU2VU10cDMvSUJXam1yRUdSRjJ-UH4/stream/` resulted in a `404 Not Found` response:
+{ "message" : "Session not found" }
+ in /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Middleware.php(66): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response))
+#1 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(203): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(156): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), Array)
+#3 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/TaskQueue.php(47): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(246): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(223): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(267): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(225): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Client.php(106): GuzzleHttp\Promise\Promise->wait()
+#10 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(436): GuzzleHttp\Client->send(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#12 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#13 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#14 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#15 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#18 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#19 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#20 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#21 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#23 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 {main}
+
+Next OpenTok\Exception\DomainException: The OpenTok API request failed: Session not found in /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php:563
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(440): OpenTok\Util\Client->handleException(Object(GuzzleHttp\Exception\ClientException))
+#1 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#2 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#3 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#4 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#5 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2019-11-14 15:26:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 35
+    [model_id] => 6
+    [state] => WAITING
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9M2YxYjdiNTdhNmY3MmUwNzZmZjhlMDVhNmQzMWEyMDVhNTNmY2RhYjpzZXNzaW9uX2lkPTFfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTlRBNE5UQXdNbjV5U25KdlRIaEhjRFpYVGpSeFdXSkhSRmh2THpoclZIZC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NTA4NCZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ1MDg0LjIyNjE5OTU2OTQxOSZjb25uZWN0aW9uX2RhdGE9JTdCJTIybW9kZWxfaWQlMjIlM0E2JTJDJTIydXNlcl9uYW1lJTIyJTNBJTIyYWRhc2RhZGFkYWRzJTIyJTJDJTIybWludXRlc19tYXglMjIlM0ExNiU3RCZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==
+    [tokbox_session_id] => 1_MX40NjQ0NTI2Mn5-MTU3Mzc0NTA4NTAwMn5ySnJvTHhHcDZXTjRxWWJHRFhvLzhrVHd-UH4
+    [minutes_minimum] => 2
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => 
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 15:24:44
+    [updated_at] => 2019-11-14 15:24:44
+    [minutes_max] => 16
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 45
+            [state] => WAITING
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 35
+            [deleted_at] => 
+            [created_at] => 2019-11-14 15:24:39
+            [updated_at] => 2019-11-14 15:24:44
+            [service_id] => 3
+            [max_minutes] => 16
+            [minimum_minutes] => 2
+        )
+
+)
+  
+[2019-11-14 15:26:02] local.WARNING: GuzzleHttp\Exception\ClientException: Client error: `GET https://api.opentok.com/v2/project/46445262/session/1_MX40NjQ0NTI2Mn5-MTU3Mzc0NTA4NTAwMn5ySnJvTHhHcDZXTjRxWWJHRFhvLzhrVHd-UH4/stream/` resulted in a `404 Not Found` response:
+{ "message" : "Session not found" }
+ in /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Middleware.php(66): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response))
+#1 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(203): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(156): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), Array)
+#3 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/TaskQueue.php(47): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{closure}()
+#4 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(246): GuzzleHttp\Promise\TaskQueue->run(true)
+#5 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(223): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#6 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(267): GuzzleHttp\Promise\Promise->waitIfPending()
+#7 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(225): GuzzleHttp\Promise\Promise->invokeWaitList()
+#8 /usr/share/nginx/html/psychics/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#9 /usr/share/nginx/html/psychics/vendor/guzzlehttp/guzzle/src/Client.php(106): GuzzleHttp\Promise\Promise->wait()
+#10 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(436): GuzzleHttp\Client->send(Object(GuzzleHttp\Psr7\Request), Array)
+#11 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#12 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#13 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#14 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#15 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#18 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#19 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#20 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#21 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#23 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 {main}
+
+Next OpenTok\Exception\DomainException: The OpenTok API request failed: Session not found in /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php:563
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/Util/Client.php(440): OpenTok\Util\Client->handleException(Object(GuzzleHttp\Exception\ClientException))
+#1 /usr/share/nginx/html/psychics/vendor/opentok/opentok/src/OpenTok/OpenTok.php(668): OpenTok\Util\Client->listStreams('1_MX40NjQ0NTI2M...')
+#2 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(81): OpenTok\OpenTok->listStreams('1_MX40NjQ0NTI2M...')
+#3 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(137): App\Services\ChatRoomUtils::number_of_streams('1_MX40NjQ0NTI2M...')
+#4 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#5 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2019-11-14 15:37:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 36
+    [model_id] => 6
+    [state] => LIVE
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9NDA4NDVhNDRjNGM2YzgyYjk5ZWI5YTc5ODdkNzRhZDJjNDVkNmRlMTpzZXNzaW9uX2lkPTFfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTlRjMU5qVTRPSDVSVFRsWFZFWXJRM0FyVnpkNFdqZFNObkpNUVRaR2JqRi1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NTc1NSZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ1NzU1Ljc4MzcxOTQxNzQ4NTAyJmNvbm5lY3Rpb25fZGF0YT0lN0IlMjJtb2RlbF9pZCUyMiUzQTYlMkMlMjJ1c2VyX25hbWUlMjIlM0ElMjJhZGFzZGFkYWRhZHMlMjIlMkMlMjJtaW51dGVzX21heCUyMiUzQTE2JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+    [tokbox_session_id] => 1_MX40NjQ0NTI2Mn5-MTU3Mzc0NTc1NjU4OH5RTTlXVEYrQ3ArVzd4WjdSNnJMQTZGbjF-UH4
+    [minutes_minimum] => 2
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => Illuminate\Support\Carbon Object
+        (
+            [date] => 2019-11-14 15:36:01.000000
+            [timezone_type] => 3
+            [timezone] => UTC
+        )
+
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 15:35:55
+    [updated_at] => 2019-11-14 15:37:02
+    [minutes_max] => 16
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 18
+                    [user_id] => 12
+                    [state] => LIVE
+                    [tokbox_user_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9NThiZWFlYzQ4N2ZjNTBkYjA3OTliN2I1ZWY0YmJjMDIwODcwZWExMzpzZXNzaW9uX2lkPTFfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTlRjMU5qVTRPSDVSVFRsWFZFWXJRM0FyVnpkNFdqZFNObkpNUVRaR2JqRi1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NTc2MSZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ1NzYxLjQ2MzQzNzQ0NTM2NTImY29ubmVjdGlvbl9kYXRhPSU3QiUyMnByb2ZpbGVfbmFtZSUyMiUzQW51bGwlMkMlMjJtb2RlbF9pZCUyMiUzQTYlMkMlMjJ1c2VyX2lkJTIyJTNBMTIlMkMlMjJjcmVkaXRzX3Blcl9taW51dGUlMjIlM0EzMCUyQyUyMm1pbnV0ZXNfbWluaW11bSUyMiUzQTIlMkMlMjJtaW51dGVzX3JlcXVlc3RlZCUyMiUzQTUlN0QmaW5pdGlhbF9sYXlvdXRfY2xhc3NfbGlzdD0=
+                    [deleted_at] => 
+                    [model_chat_room_id] => 36
+                    [created_at] => 2019-11-14 15:36:01
+                    [updated_at] => 2019-11-14 15:36:01
+                )
+
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 46
+            [state] => LIVE
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 36
+            [deleted_at] => 
+            [created_at] => 2019-11-14 15:35:45
+            [updated_at] => 2019-11-14 15:37:02
+            [service_id] => 3
+            [max_minutes] => 16
+            [minimum_minutes] => 2
+        )
+
+)
+  
+[2019-11-14 15:37:02] local.WARNING: BadMethodCallException: Call to undefined method App\Models\User::deduct_credits() in /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:50
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(36): Illuminate\Database\Eloquent\Model::throwBadMethodCallException('deduct_credits')
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'deduct_credits', Array)
+#2 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(282): Illuminate\Database\Eloquent\Model->__call('deduct_credits', Array)
+#3 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\Models\model_chat_room->start_session()
+#4 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#5 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2019-11-14 15:37:02] local.ERROR: Call to undefined method App\Models\User::deduct_credits() {"exception":"[object] (BadMethodCallException(code: 0): Call to undefined method App\\Models\\User::deduct_credits() at /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:50)
+[stacktrace]
+#0 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(36): Illuminate\\Database\\Eloquent\\Model::throwBadMethodCallException('deduct_credits')
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'deduct_credits', Array)
+#2 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(199): Illuminate\\Database\\Eloquent\\Model->__call('deduct_credits', Array)
+#3 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(312): App\\Models\\model_chat_room->live_session_update()
+#4 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(72): App\\Models\\model_chat_room->process_end_chat()
+#5 [internal function]: App\\Console\\Commands\\cron_1_1_vchat_process->handle()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\cron_1_1_vchat_process), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /usr/share/nginx/html/psychics/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 {main}
+"} 
+[2019-11-14 15:46:02] local.ERROR: Class 'App\Models\log' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Models\\log' not found at /usr/share/nginx/html/psychics/app/Models/User.php:359)
+[stacktrace]
+#0 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(282): App\\Models\\User->deduct_credits(60, 'VCHAT_1_1_MINUT...', 6)
+#1 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\\Models\\model_chat_room->start_session()
+#2 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\\Services\\ChatRoomUtils::process(Array)
+#3 [internal function]: App\\Console\\Commands\\cron_1_1_vchat_process->handle()
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#9 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\cron_1_1_vchat_process), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-11-14 15:53:02] local.DEBUG: in User::deduct_credits with $action = VCHAT_1_1_MINUTES  
+[2019-11-14 15:53:02] local.DEBUG: in User::deduct_credits with $credits = 60  
+[2019-11-14 15:53:02] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 15:53:02] local.ERROR: Class 'App\Models\DB' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Models\\DB' not found at /usr/share/nginx/html/psychics/app/Models/User.php:396)
+[stacktrace]
+#0 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(282): App\\Models\\User->deduct_credits(60, 'VCHAT_1_1_MINUT...', 6)
+#1 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\\Models\\model_chat_room->start_session()
+#2 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\\Services\\ChatRoomUtils::process(Array)
+#3 [internal function]: App\\Console\\Commands\\cron_1_1_vchat_process->handle()
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#9 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\cron_1_1_vchat_process), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /usr/share/nginx/html/psychics/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-11-14 15:59:02] local.DEBUG: in User::deduct_credits with $action = VCHAT_1_1_MINUTES  
+[2019-11-14 15:59:02] local.DEBUG: in User::deduct_credits with $credits = 300  
+[2019-11-14 15:59:02] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 15:59:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 39
+    [model_id] => 6
+    [state] => LIVE
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9ODAyN2E5ODBiZDQ2YmYxNjY2YmY2OWE5ODFlNjg0NTBiNzVjZTg4YzpzZXNzaW9uX2lkPTJfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTnpFd01EY3hPWDR3WWtWYU4yNXFkRGxTUzB3eE1GTTJRbFZLVVVGSmFrdC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NzA5OSZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ3MDk5Ljg5MDY1NDAxNzkxMzcmY29ubmVjdGlvbl9kYXRhPSU3QiUyMm1vZGVsX2lkJTIyJTNBNiUyQyUyMnVzZXJfbmFtZSUyMiUzQSUyMmFkYXNkYWRhZGFkcyUyMiUyQyUyMm1pbnV0ZXNfbWF4JTIyJTNBNTAlN0QmaW5pdGlhbF9sYXlvdXRfY2xhc3NfbGlzdD0=
+    [tokbox_session_id] => 2_MX40NjQ0NTI2Mn5-MTU3Mzc0NzEwMDcxOX4wYkVaN25qdDlSS0wxMFM2QlVKUUFJakt-UH4
+    [minutes_minimum] => 10
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => Illuminate\Support\Carbon Object
+        (
+            [date] => 2019-11-14 15:58:29.000000
+            [timezone_type] => 3
+            [timezone] => UTC
+        )
+
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 15:58:19
+    [updated_at] => 2019-11-14 15:59:02
+    [minutes_max] => 50
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 21
+                    [user_id] => 12
+                    [state] => LIVE
+                    [tokbox_user_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9OTFkZjU4MWZjZjIzODkwYjhmZGI4OGUzNzM1ZDE1NThiOWQxNTYxYjpzZXNzaW9uX2lkPTJfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMwTnpFd01EY3hPWDR3WWtWYU4yNXFkRGxTUzB3eE1GTTJRbFZLVVVGSmFrdC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc0NzEwOSZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzQ3MTA5LjA5ODQ4MDgxMDQ0MzUmY29ubmVjdGlvbl9kYXRhPSU3QiUyMnByb2ZpbGVfbmFtZSUyMiUzQW51bGwlMkMlMjJtb2RlbF9pZCUyMiUzQTYlMkMlMjJ1c2VyX2lkJTIyJTNBMTIlMkMlMjJjcmVkaXRzX3Blcl9taW51dGUlMjIlM0EzMCUyQyUyMm1pbnV0ZXNfbWluaW11bSUyMiUzQTEwJTJDJTIybWludXRlc19yZXF1ZXN0ZWQlMjIlM0E1JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+                    [deleted_at] => 
+                    [model_chat_room_id] => 39
+                    [created_at] => 2019-11-14 15:58:29
+                    [updated_at] => 2019-11-14 15:58:29
+                )
+
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 49
+            [state] => LIVE
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 39
+            [deleted_at] => 
+            [created_at] => 2019-11-14 15:58:14
+            [updated_at] => 2019-11-14 15:59:02
+            [service_id] => 1
+            [max_minutes] => 50
+            [minimum_minutes] => 10
+        )
+
+)
+  
+[2019-11-14 15:59:02] local.WARNING: Illuminate\Database\Eloquent\MassAssignmentException: Add [user_id] to fillable property to allow mass assignment on [App\Models\UserCreditLog]. in /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:331
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(171): Illuminate\Database\Eloquent\Model->fill(Array)
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(392): Illuminate\Database\Eloquent\Model->__construct(Array)
+#2 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1119): Illuminate\Database\Eloquent\Model->newInstance(Array)
+#3 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(794): Illuminate\Database\Eloquent\Builder->newModelInstance(Array)
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#7 /usr/share/nginx/html/psychics/app/Models/User.php(454): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#8 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(282): App\Models\User->deduct_credits(300, 'VCHAT_1_1_MINUT...', 6)
+#9 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\Models\model_chat_room->start_session()
+#10 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#11 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#13 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#15 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#17 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#18 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#19 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 {main}  
+[2019-11-14 16:04:02] local.DEBUG: in User::deduct_credits with $action = VCHAT_1_1_MINUTES  
+[2019-11-14 16:04:02] local.DEBUG: in User::deduct_credits with $credits = 60  
+[2019-11-14 16:04:02] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 16:07:01] local.DEBUG: in User::deduct_credits with $action = VCHAT_1_1_MINUTES  
+[2019-11-14 16:07:01] local.DEBUG: in User::deduct_credits with $credits = 30  
+[2019-11-14 16:07:01] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 16:17:02] local.DEBUG: in User::deduct_credits with $action = Video Chat_VCHAT_1_1_MINUTES  
+[2019-11-14 16:17:02] local.DEBUG: in User::deduct_credits with $credits = 60  
+[2019-11-14 16:17:02] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 17:28:02] local.DEBUG: in User::deduct_credits with $action = Video Chat  
+[2019-11-14 17:28:02] local.DEBUG: in User::deduct_credits with $credits = 60  
+[2019-11-14 17:28:02] local.DEBUG: in User::deduct_credits with $twilio_log_id =   
+[2019-11-14 17:28:02] local.WARNING: cron_1_1_vchat_process fail process() - Array
+(
+    [id] => 42
+    [model_id] => 6
+    [state] => LIVE
+    [tokbox_model_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9YWU5Y2Y0MzY1OTBjNmZiZGUyZjlhZjQzNDE3MmVlYWMzMjQzZDNhODpzZXNzaW9uX2lkPTJfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMxTWpRMU9USTFOSDV2UVVKT1N6bGtLMUZXVlRoVlYyWmpVMjVTUlV4UmVWbC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc1MjQ1OCZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzUyNDU4LjM2NDU1NTkwNjg3NjAmY29ubmVjdGlvbl9kYXRhPSU3QiUyMm1vZGVsX2lkJTIyJTNBNiUyQyUyMnVzZXJfbmFtZSUyMiUzQSUyMmFkYXNkYWRhZGFkcyUyMiUyQyUyMm1pbnV0ZXNfbWF4JTIyJTNBMTY2JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+    [tokbox_session_id] => 2_MX40NjQ0NTI2Mn5-MTU3Mzc1MjQ1OTI1NH5vQUJOSzlkK1FWVThVV2ZjU25SRUxReVl-UH4
+    [minutes_minimum] => 2
+    [minutes_paid] => 0
+    [minutes_total] => 0
+    [credits_per_minute] => 30
+    [credits_deducted] => 0
+    [credits_total] => 0
+    [started_at] => Illuminate\Support\Carbon Object
+        (
+            [date] => 2019-11-14 17:27:46.000000
+            [timezone_type] => 3
+            [timezone] => UTC
+        )
+
+    [two_minute_warning_at] => 
+    [ended_at] => 
+    [notify_email_at] => 
+    [notify_sms_at] => 
+    [notify_sns_at] => 
+    [deleted_at] => 
+    [minutes_requested] => 5
+    [created_at] => 2019-11-14 17:27:38
+    [updated_at] => 2019-11-14 17:28:02
+    [minutes_max] => 166
+    [user_id] => 12
+    [fan_chat_room] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 24
+                    [user_id] => 12
+                    [state] => LIVE
+                    [tokbox_user_token] => T1==cGFydG5lcl9pZD00NjQ0NTI2MiZzaWc9MTFlMjM1MTY2MWFkMzE0NGRhNjAxYzlkZTgzOWM3ZWY0ZjliY2QyYjpzZXNzaW9uX2lkPTJfTVg0ME5qUTBOVEkyTW41LU1UVTNNemMxTWpRMU9USTFOSDV2UVVKT1N6bGtLMUZXVlRoVlYyWmpVMjVTUlV4UmVWbC1VSDQmY3JlYXRlX3RpbWU9MTU3Mzc1MjQ2NiZyb2xlPXB1Ymxpc2hlciZub25jZT0xNTczNzUyNDY2LjM4MTkxNDYwMjQzODE5JmNvbm5lY3Rpb25fZGF0YT0lN0IlMjJwcm9maWxlX25hbWUlMjIlM0FudWxsJTJDJTIybW9kZWxfaWQlMjIlM0E2JTJDJTIydXNlcl9pZCUyMiUzQTEyJTJDJTIyY3JlZGl0c19wZXJfbWludXRlJTIyJTNBMzAlMkMlMjJtaW51dGVzX21pbmltdW0lMjIlM0EyJTJDJTIybWludXRlc19yZXF1ZXN0ZWQlMjIlM0E1JTdEJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9
+                    [deleted_at] => 
+                    [model_chat_room_id] => 42
+                    [created_at] => 2019-11-14 17:27:46
+                    [updated_at] => 2019-11-14 17:27:46
+                )
+
+        )
+
+    [user_1_1_chat_request] => Array
+        (
+            [id] => 52
+            [state] => LIVE
+            [requested_time] => 
+            [minutes_requested] => 5
+            [user_id] => 12
+            [model_id] => 6
+            [model_chat_room_id] => 42
+            [deleted_at] => 
+            [created_at] => 2019-11-14 17:27:28
+            [updated_at] => 2019-11-14 17:28:02
+            [service_id] => 3
+            [max_minutes] => 166
+            [minimum_minutes] => 2
+            [service] => Array
+                (
+                    [id] => 3
+                    [name] => Video Chat
+                    [enable_duration] => 1
+                    [created_at] => 2019-10-24 16:28:23
+                    [updated_at] => 2019-10-24 16:28:23
+                    [icon] => mdi-video-account
+                )
+
+        )
+
+)
+  
+[2019-11-14 17:28:02] local.WARNING: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'service_id' in 'field list' in /usr/share/nginx/html/psychics/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:61
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(61): PDO->prepare('insert into `us...', Array)
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(452): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `us...')
+#2 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(657): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `us...', Array)
+#3 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\Database\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2663): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1353): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(839): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(804): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#11 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(667): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(795): Illuminate\Database\Eloquent\Model->save()
+#13 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1124): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Models\UserCreditLog))
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(796): tap(Object(App\Models\UserCreditLog), Object(Closure))
+#15 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#17 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#18 /usr/share/nginx/html/psychics/app/Models/User.php(455): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#19 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(284): App\Models\User->deduct_credits(60, 'Video Chat', 6, NULL, false, 3)
+#20 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\Models\model_chat_room->start_session()
+#21 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#22 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#23 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#24 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#25 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#27 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#28 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#29 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#30 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#31 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#32 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#33 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#34 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#35 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#36 {main}
+
+Next Doctrine\DBAL\Driver\PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'service_id' in 'field list' in /usr/share/nginx/html/psychics/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:63
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(452): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `us...')
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(657): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `us...', Array)
+#2 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\Database\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#3 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2663): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1353): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(839): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(804): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(667): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(795): Illuminate\Database\Eloquent\Model->save()
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1124): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Models\UserCreditLog))
+#13 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(796): tap(Object(App\Models\UserCreditLog), Object(Closure))
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#15 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#16 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#17 /usr/share/nginx/html/psychics/app/Models/User.php(455): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#18 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(284): App\Models\User->deduct_credits(60, 'Video Chat', 6, NULL, false, 3)
+#19 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\Models\model_chat_room->start_session()
+#20 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#21 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#23 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#24 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#25 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#27 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#28 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#29 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#31 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#32 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#33 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#34 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#35 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'service_id' in 'field list' (SQL: insert into `user_credit_log` (`user_id`, `credits`, `action`, `service_id`, `model_id`, `updated_at`, `created_at`) values (12, 60, Video Chat, 3, 6, 2019-11-14 17:28:02, 2019-11-14 17:28:02)) in /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664
+Stack trace:
+#0 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\Database\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#1 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2663): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1353): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(839): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(804): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#8 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(667): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#9 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(795): Illuminate\Database\Eloquent\Model->save()
+#10 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1124): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Models\UserCreditLog))
+#11 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(796): tap(Object(App\Models\UserCreditLog), Object(Closure))
+#12 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#13 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1618): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#14 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1630): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#15 /usr/share/nginx/html/psychics/app/Models/User.php(455): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#16 /usr/share/nginx/html/psychics/app/Models/model_chat_room.php(284): App\Models\User->deduct_credits(60, 'Video Chat', 6, NULL, false, 3)
+#17 /usr/share/nginx/html/psychics/app/Services/ChatRoomUtils.php(159): App\Models\model_chat_room->start_session()
+#18 /usr/share/nginx/html/psychics/app/Console/Commands/cron_1_1_vchat_process.php(66): App\Services\ChatRoomUtils::process(Array)
+#19 [internal function]: App\Console\Commands\cron_1_1_vchat_process->handle()
+#20 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#21 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#22 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#23 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Container/Container.php(576): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#24 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\Container\Container->call(Array)
+#25 /usr/share/nginx/html/psychics/vendor/symfony/console/Command/Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#26 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#27 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(921): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\cron_1_1_vchat_process), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /usr/share/nginx/html/psychics/vendor/symfony/console/Application.php(149): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#31 /usr/share/nginx/html/psychics/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(133): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#32 /usr/share/nginx/html/psychics/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#33 {main}  

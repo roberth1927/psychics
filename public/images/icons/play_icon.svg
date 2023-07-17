@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Play_Icon" data-name="Play Icon" transform="translate(-4663 -2768)" style="mix-blend-mode: normal;isolation: isolate">
+    <g id="Icon" transform="translate(4663 2768)">
+      <rect id="Container" width="50" height="50" fill="none"/>
+      <path id="play-solid" d="M5.7,32.494A3.749,3.749,0,0,0,0,35.7V63.2a3.749,3.749,0,0,0,5.7,3.2L28.2,52.65a3.753,3.753,0,0,0,0-6.406Z" transform="translate(10 -24.442)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

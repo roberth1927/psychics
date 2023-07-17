@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Double_Chevron_Icon" data-name="Double Chevron Icon" transform="translate(0 40) rotate(-90)">
+    <g id="Icon">
+      <rect id="Container" width="40" height="40" rx="10" fill="none"/>
+      <path id="chevrons-down-solid" d="M47.34,59.339a2,2,0,0,1-2.831,0l-12-12a2,2,0,0,1,2.831-2.831L45.928,55.1l10.586-10.58a2,2,0,0,1,2.831,2.831l-12,12Zm12-24-12,12a2,2,0,0,1-2.831,0l-12-12a2,2,0,0,1,2.831-2.831L45.928,43.1l10.586-10.58a2,2,0,0,1,2.831,2.831Z" transform="translate(-25.925 -25.925)" fill="#d395a5"/>
+    </g>
+  </g>
+</svg>

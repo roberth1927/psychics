@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Featured_Icon_30x30_Blue_Activated" data-name="Featured Icon 30x30 Blue Activated" transform="translate(0 0)">
+    <g id="Specialties_Icon_30x30_Active_Blue" data-name="Specialties Icon 30x30 Active Blue" transform="translate(30 30) rotate(180)">
+      <g id="Group_7679" data-name="Group 7679">
+        <rect id="Rectangle_2856" data-name="Rectangle 2856" width="30" height="30" fill="none"/>
+      </g>
+    </g>
+    <g id="bookmark-duotone_1_" data-name="bookmark-duotone (1)" transform="translate(5)">
+      <path id="Path_6036" data-name="Path 6036" d="M15,1.875V20L7.5,15.625,0,20V1.875A1.875,1.875,0,0,1,1.875,0h1.25V12.739a.625.625,0,0,0,.9.559L7.5,11.563,10.97,13.3a.625.625,0,0,0,.9-.559V0h1.25A1.875,1.875,0,0,1,15,1.875Z" transform="translate(0 0)" fill="#8ebef8" opacity="0.4"/>
+      <path id="Path_6037" data-name="Path 6037" d="M88.75,0V12.739a.625.625,0,0,1-.9.559l-3.47-1.735L80.9,13.3a.625.625,0,0,1-.9-.559V0Z" transform="translate(-76.875 0)" fill="#8ebef8"/>
+    </g>
+  </g>
+</svg>

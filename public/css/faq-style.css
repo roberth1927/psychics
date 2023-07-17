@@ -1,0 +1,123 @@
+.panel-default>.panel-heading {
+    background: #ececec
+}
+
+.inner-panel-perp-head {
+    font-size: 26px;
+    line-height: 25px;
+    color: #892788;
+    padding: 13px 0 20px;
+}
+
+.inner-panel-num {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 32px;
+}
+
+.inner-panel-after-num {
+    font-size: 22px;
+    font-weight: 300;
+    color: #333333;
+    line-height: 32px;
+    padding: 15px 0 15px 25px;
+}
+
+
+.panel-heading {
+    padding: 25px 0;
+}
+
+.panel-heading a:hover,
+.panel-heading a:focus,
+.panel-heading a:active,
+.panel-heading a.active {
+    color: #892788;
+    text-decoration: none;
+}
+
+.panel-default .accordion-toggle {
+    padding-left: 120px;
+    position: relative;
+    display: block;
+}
+
+.panel-body {
+    padding: 30px 120px 40px;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300 !important;
+    line-height: 1.4;
+    color: #5f5771;
+    background: #ffffff;
+}
+
+.panel-default .accordion-toggle:not(.collapsed):before {
+    content: "";
+    background: url(/images/tarot-reading/Arrow-down.svg) no-repeat;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 90px;
+    top: 4px;
+    margin-right: 0px;
+}
+
+.panel-default .accordion-toggle.collapsed:before {
+    content: "";
+    background: url(/images/tarot-reading/Arrow-right.svg) no-repeat;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 90px;
+    top: 4px;
+    margin-right: 0px;
+}
+
+
+@media screen and (max-width: 767px) {
+    /*mobile */
+
+    .panel-body {
+        padding: 30px 10px 40px;
+    }
+
+    .panel-default .accordion-toggle {
+        padding-left: 50px;
+        padding-right: 10px;
+    }
+
+    .mob-no-pad {
+        padding: 0;
+    }
+
+    .panel-default .accordion-toggle:not(.collapsed):before {
+        content: "";
+        background: url(/images/tarot-reading/Arrow-down.svg) no-repeat;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 20px;
+        top: 4px;
+        margin-right: 0px;
+    }
+
+    .panel-default .accordion-toggle.collapsed:before {
+        content: "";
+        background: url(/images/tarot-reading/Arrow-right.svg) no-repeat;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 20px;
+        top: 4px;
+        margin-right: 0px;
+    }
+
+    .right-label {
+        top: auto;
+        right: 0;
+        bottom: 5px;
+    }
+
+}
